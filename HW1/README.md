@@ -11,7 +11,7 @@ The work was written in Python and deployed using Jupyter Notebook, therefore; p
 2. Activate the virtual environment (the following syntax will work on Git Bash) <br>
 `source venv/scripts/activate` <br>
 or on Command Prompt Window<br>
-`venv/scripts/activate `
+`venv\scripts\activate `
 
 3. Install the required library <br>
 `pip install -r requirements.txt`
