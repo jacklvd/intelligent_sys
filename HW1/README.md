@@ -16,4 +16,5 @@ or on Command Prompt Window<br>
 3. Install the required library <br>
 `pip install -r requirements.txt`
 
+Remember to check the Python Interpreter before running
 And you are good to go.
