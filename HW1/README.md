@@ -4,7 +4,7 @@
 This homework intention is help exploring how to generate simple model of spiking neurons <br> using the equation of Eugene M.Izhikevich
 
 ### How to run:
-The work was written in Python and deployed using Jupyter Notebook, therefore; please execute each block at a time or execute all the block <br> if you run the program normally, nothing will show up.
+The work was written in Python and deployed using Jupyter Notebook, therefore; please execute each block at a time or execute all the block at the beginning <br> if you run the program normally, nothing will show up.
 1. Create a virtual environment <br>
 `python -m venv venv`
 
