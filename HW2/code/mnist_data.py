@@ -7,12 +7,21 @@ no_of_different_labels = 10 #  i.e. 0, 1, 2, 3, ..., 9
 image_pixels = image_size * image_size
 data_path = 'HW2/HW2_material/'
 train_data = np.loadtxt('.\HW2\HW2_material\MNISTnumImages5000_balanced.txt', dtype=float)
+train_labels = np.loadtxt('.\HW2\HW2_material\MNISTnumLabels5000_balanced.txt', dtype=float)
 
-fac = 0.99 / 255 # to avoid 0
-train_imgs = np.asfarray(train_data[1:]) * fac + 0.01
-train_labels = np.asfarray(train_data[:, :1])
+def img_extract(num_label):
 
-for i in range(10):
-    img = train_imgs[i].reshape((28,28))
-    plt.imshow(img, cmap="Greys")
+    img = [train_data[key] for (key, label) in enumerate(train_labels) if int(label) == num_label]
+    for i in range(500):
+        image = img[i].reshape((28, 28))
+        plt.subplot(20, 25, i + 1)
+        plt.imshow(image, cmap="gray")
+        plt.axis('off')
+    # plt.tight_layout(pad=2.0)
+    # plt.savefig(f'../assets/500_{num_label}figs.png')
     plt.show()
+    
+if __name__ == '__main__':
+    for i in range(10):
+        if i == 0 or i == 1 or i == 7 or i == 9:
+            img_extract(i)
