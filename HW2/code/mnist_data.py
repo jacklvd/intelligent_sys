@@ -1,3 +1,4 @@
+import random
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -19,9 +20,41 @@ def img_extract(num_label):
         plt.axis('off')
     # plt.tight_layout(pad=2.0)
     # plt.savefig(f'../assets/500_{num_label}figs.png')
-    plt.show()
+    # plt.show()
     
-if __name__ == '__main__':
-    for i in range(10):
-        if i == 0 or i == 1 or i == 7 or i == 9:
-            img_extract(i)
+def shuffle_lst(num_label):
+    img = [train_data[key] for (key, label) in enumerate(train_labels) if int(label) == num_label]
+    res = list()
+    for i in range(400):
+        res.append(img[i])
+    return res
+
+training_dataset = shuffle_lst(0) + shuffle_lst(1)
+random.shuffle(training_dataset)
+
+
+def make_dataset(num_label): 
+    img = [train_data[key] for (key, label) in enumerate(train_labels) if int(label) == num_label]
+    random.shuffle(img)
+    res = list()
+    for i in range(400, 500):
+        res.append(img[i])
+    return res
+
+
+test_dataset = list()
+challenge_dataset = list()
+
+for i in range(10):
+    if i == 0 or i == 1:
+        test_dataset += make_dataset(i)
+    elif i in [n for n in range(2, 10)]:
+        challenge_dataset += make_dataset(i)
+        
+random.shuffle(test_dataset)
+random.shuffle(challenge_dataset)
+    
+# if __name__ == '__main__':
+#     for i in range(10):
+#         if i == 0 or i == 1 or i == 7 or i == 9:
+#             img_extract(i)
