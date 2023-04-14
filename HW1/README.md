@@ -3,7 +3,12 @@
 ### Description:
 This homework intention is exploring how to generate simple model of spiking neurons <br> using the math equation of Eugene M.Izhikevich
 
+### Product:
+
+<img src='https://github.com/jacklvd/intelligent_sys/blob/master/HW1/assets/problem3.png' title='demo' width='' alt='demo' />
+
 ### How to run:
+
 The work was written in Python and deployed using Jupyter Notebook; therefore, please execute each block at a time or <br>execute all the block at the beginning if you run the program normally, nothing will show up.
 1. Create a virtual environment <br>
 `python -m venv venv`
